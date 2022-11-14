@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta NAME="Generator" content="EditPlus">
+    <meta NAME="Author" content="">
+    <meta NAME="Keywords" content="">
+    <meta NAME="Description" content="">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="slide" id="slide-show">
+            <span class="slide-img position1"><img id="img1" src="./assets/img/img1.jpg" alt=""></span>
+            <span class="slide-img position2"><img id="img2" src="./assets/img/img2.jpg" alt=""></span>
+            <span class="slide-img position3"><img id="img3" src="./assets/img/img3.jpg" alt=""></span>
+            <span class="slide-img position4"><img id="img4" src="./assets/img/img4.jpg" alt=""></span>
+            <span class="slide-img position5"><img id="img5" src="./assets/img/img5.jpg" alt=""></span>
+            <span class="slide-img position6"><img id="img6" src="./assets/img/img6.jpg" alt=""></span>
+        </div>
+        <div id="myModal" class="modal">
+                <span class="close">&times</span>
+            <img class="modal-content" id="img-scale">
+        </div>
+        <div class="wrapper" id="wapper-box">
+            <h1 class="question">Cho mình xin lỗi vì dùng ảnh chưa xin phép nhé <br>                
+            </h1>
+            <div class="btn-group">
+                <button class="btn-choose btn-yes">
+                    Chấp nhận
+                </button>
+                <button class="btn-choose btn-no">
+                    Không 
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="heart-box">
+        <div class="center-text">
+        Cảm ơn nhé! <br>
+        Hihi:)
+        </div>
+        <canvas id="pinkboard">
+        </canvas>
+
+    </div>
+
+    <script>
+    // Get the modal
+    var modal = document.getElementById("myModal");
+    var slide = document.getElementById("slide-show");
+    var wapperBox = document.getElementById("wapper-box");
+    
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    for (var i = 1; i < 7; i++) {
+        allimg = document.getElementById("img" + i);
+        var modalImg = document.getElementById("img-scale");
+        allimg.onclick = function(){
+            modal.style.display = "block";
+            modalImg.src = this.src;
+            slide.style.display = "none";
+            wapperBox.style.display = "none";
+
+            // captionText.innerHTML = this.alt;
+        }
+    }
+    
+    // Get the <span> element that closes the modal
+    var exit = document.getElementsByClassName("close")[0];
+    
+    // When the user clicks on <span> (x), close the modal
+    exit.onclick = function() { 
+        modal.style.display = "none";
+        slide.style.display = "block";
+        wapperBox.style.display = "block";
+    }
+    </script>
+    <!-- <script src="./assets/heart.js"></script> -->
+    <script src="./assets/move_btn.js"></script>
+
+</body>
+</html>
